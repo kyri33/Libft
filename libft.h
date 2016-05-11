@@ -6,7 +6,7 @@
 /*   By: kioulian <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 14:39:17 by kioulian          #+#    #+#             */
-/*   Updated: 2016/05/11 10:21:40 by kioulian         ###   ########.fr       */
+/*   Updated: 2016/05/11 11:23:52 by kioulian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ int		ft_isupper(int c);
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
+int		ft_isprint(int c);
 
 #endif

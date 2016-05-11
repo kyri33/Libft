@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kioulian <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/10 08:32:43 by kioulian          #+#    #+#             */
-/*   Updated: 2016/05/11 11:14:52 by kioulian         ###   ########.fr       */
+/*   Created: 2016/05/11 11:22:28 by kioulian          #+#    #+#             */
+/*   Updated: 2016/05/11 11:23:22 by kioulian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memset(void *b, int c, size_t len)
+int	ft_isprint(int c)
 {
-	unsigned char	*character;
-
-	if (len == 0)
-	{
-		return (b);
-	}
-	character = (unsigned char *)b;
-	while (len--)
-	{
-		*character = (unsigned char)c;
-		if (len)
-			character++;
-	}
-	return (b);
+	if (c >= ' ' && c <= '~')
+		return (1);
+	return (0);
 }

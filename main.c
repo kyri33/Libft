@@ -6,7 +6,7 @@
 /*   By: kcowle <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 10:52:43 by kcowle            #+#    #+#             */
-/*   Updated: 2016/05/11 10:10:16 by kioulian         ###   ########.fr       */
+/*   Updated: 2016/05/11 11:05:07 by kioulian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,17 +53,16 @@ int		main(void)
 	else ft_putstr("\nTest 2 for isdigit Failed");
 	if (ft_isdigit('l')) ft_putstr("\nTest 3 for isdigit Failed");
 	else ft_putstr("\nTest 3 for isdigit Passed");
-//	if (ft_isprint('p')) ft_putstr("\nTest 1 for isprint Passed");
-//	else ft_putstr("\nTest 1 for isprint Failed");
-//	if (ft_isprint('\n')) ft_putstr("\nTest 2 for isprint Failed");
-//	else ft_putstr("\nTest 2 for isprint Passed");
+	if (ft_isprint('p')) ft_putstr("\nTest 1 for isprint Passed");
+	else ft_putstr("\nTest 1 for isprint Failed");
+	if (ft_isprint('\n')) ft_putstr("\nTest 2 for isprint Failed");
+	else ft_putstr("\nTest 2 for isprint Passed");
 	char strmem[] = "almost every programmer should know memset!";
-	ft_memset(strmem, '-',6);
-	if (ft_strcmp(strmem, "------ every programmer should know memset!")) ft_putstr("\nTest for memset Passed");
+	char strmemt[] = "almost every programmer should know memset!";
+	ft_memset(strmemt, '-', 6);
+	memset(strmem, '-',6);
+	if (strcmp(strmem, strmemt) == 0) ft_putstr("\nTest for memset Passed");
 	else ft_putstr("\nTest for memset Failed");
-    ft_putstr("\n\n\n");
-    ft_putstr(strmem);
-    ft_putstr("\n\n\n");
     char cmptest[] = "Hello World";
 	char cmtest1[] = "Hello World";
 	if (ft_strcmp(cmptest, cmtest1) == 0) ft_putstr("\nTest 1 for strcmp Passed");
