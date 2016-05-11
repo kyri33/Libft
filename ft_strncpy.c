@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kioulian <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/10 11:50:59 by kioulian          #+#    #+#             */
-/*   Updated: 2016/05/11 16:04:05 by kioulian         ###   ########.fr       */
+/*   Created: 2016/05/11 12:44:01 by kioulian          #+#    #+#             */
+/*   Updated: 2016/05/11 12:55:27 by kioulian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
 	unsigned int	i;
-	char			*str;
 
 	i = 0;
-	if (*s)
+	while (i < len)
 	{
-		str = (char*)malloc(sizeof(*str) * (ft_strlen(s) + 1));
-		while (s[i] != '\0')
-		{
-			str[i] = f(i, s[i]);
-			i++;
-		}
-		str[i] = '\0';
-		return (str);
+		if (src[i])
+			dst[i] = src[i];
+		else
+			dst[i] = '\0';
+		i++;
 	}
-	return (NULL);
+	return (dst);
 }
