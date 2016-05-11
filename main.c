@@ -71,16 +71,12 @@ int		main(void)
 	else ft_putstr("\nTest 2 for strcmp Failed");
 	char strchrstr[] = "Looking for the 's' character in \"This is a sample string\"";
 	char *pch;
-//	pch = ft_strchr(strchrstr, 's');
-//	while (pch != NULL)
-//	{
-//		if (pch-str+1 == -136)
-//		{
-//			ft_putstr("\nTest for ft_strchr Passed");
-//			break;
-//		}
-//		pch = ft_strchr(pch+1, 's');
-//	}
+	pch = ft_strchr(strchrstr, 's');
+    if (pch == &strchrstr[17])
+    {
+        ft_putstr("\nTest 1 for ft_strchr Passed");
+    }
+    if (ft_strchr(strchrstr, 'z') == NULL) ft_putstr("\nTest 2 for ft_strchr Passed");
 	char cmptestnewlol[] = "Hello";
 	char *cpytest = (char *)malloc(sizeof(char *)*6);
 	ft_strcpy(cpytest, cmptestnewlol);
@@ -88,9 +84,9 @@ int		main(void)
 	else ft_putstr("\nTest for strcpy Failed");
 	char s1[] = "Hello";
 	char *new;
-//	new	= ft_strdup(s1);
-//	if (strcmp(new, s1) == 0) ft_putstr("\nTest for strdup Passed");
-//	else ft_putstr("\nTest for strdup Failed");
+	new	= ft_strdup(s1);
+	if (strcmp(new, s1) == 0) ft_putstr("\nTest for strdup Passed");
+	else ft_putstr("\nTest for strdup Failed");
 	char str2[31];
 	ft_strcpy(str2, "these ");
 	ft_strcat(str2, "strings ");
