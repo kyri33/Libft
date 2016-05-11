@@ -6,7 +6,7 @@
 /*   By: kioulian <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 14:39:17 by kioulian          #+#    #+#             */
-/*   Updated: 2016/05/11 12:15:39 by kioulian         ###   ########.fr       */
+/*   Updated: 2016/05/11 12:38:13 by kioulian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,7 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
 
 #endif
