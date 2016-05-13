@@ -6,7 +6,7 @@
 /*   By: kioulian <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/10 09:43:51 by kioulian          #+#    #+#             */
-/*   Updated: 2016/05/10 10:16:21 by kioulian         ###   ########.fr       */
+/*   Updated: 2016/05/13 11:23:39 by kioulian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strnew(size_t size)
 {
 	char	*str;
 
-	str = malloc(size + 1);
+	str = (char *)malloc(sizeof(char) * size);
 	if (str == NULL)
 		return (NULL);
 	ft_strclr(str);
