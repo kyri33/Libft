@@ -6,7 +6,7 @@
 /*   By: kioulian <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 12:44:01 by kioulian          #+#    #+#             */
-/*   Updated: 2016/05/11 12:55:27 by kioulian         ###   ########.fr       */
+/*   Updated: 2016/05/12 10:30:58 by kioulian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 			dst[i] = '\0';
 		i++;
 	}
+	dst[i] = '\0';
 	return (dst);
 }

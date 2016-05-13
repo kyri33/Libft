@@ -6,7 +6,7 @@
 /*   By: kioulian <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 14:39:17 by kioulian          #+#    #+#             */
-/*   Updated: 2016/05/11 16:14:25 by kioulian         ###   ########.fr       */
+/*   Updated: 2016/05/12 10:13:53 by kioulian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strncat(char *s1, const char *s2, size_t n);
 void	ft_putendl(char const *s);
 char	*ft_strjoin(char const *s1, char const *s2);
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+char	*ft_strstr(const char *big, const char *little);
+void	ft_bzero(void *s, size_t n);
 
 #endif

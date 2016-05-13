@@ -6,13 +6,13 @@
 /*   By: kioulian <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 16:44:31 by kioulian          #+#    #+#             */
-/*   Updated: 2016/05/11 16:47:43 by kioulian         ###   ########.fr       */
+/*   Updated: 2016/05/12 08:56:35 by kioulian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t		i;
 	char		*tmp;

@@ -6,7 +6,7 @@
 /*   By: kioulian <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 12:55:46 by kioulian          #+#    #+#             */
-/*   Updated: 2016/05/11 16:05:17 by kioulian         ###   ########.fr       */
+/*   Updated: 2016/05/12 10:23:34 by kioulian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	size_t		i;
 
 	str = s1;
+	len = 0;
 	i = 0;
 	while (str[len] != '\0')
 		len++;
@@ -26,7 +27,8 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	{
 		str[len] = s2[i];
 		i++;
+		len++;
 	}
-	str[i] = '\0';
+	str[len] = '\0';
 	return (s1);
 }

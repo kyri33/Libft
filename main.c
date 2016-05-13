@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kcowle <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: kioulian <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/09 10:52:43 by kcowle            #+#    #+#             */
-/*   Updated: 2016/05/11 11:05:07 by kioulian         ###   ########.fr       */
+/*   Created: 2016/05/12 08:49:49 by kioulian          #+#    #+#             */
+/*   Updated: 2016/05/12 10:15:57 by kioulian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,126 +15,277 @@
 #include <string.h>
 #include <stdlib.h>
 
-int		main(void)
+int     main(void)
 {
 	char word[5] = "Hello";
 	char letter = 'H';
-	ft_putchar('l');
-	ft_putstr("Test for putstr Passed");
-	char number = '1';
+	char number= '1';
 	int number1 = ft_atoi(&number);
-	if (number1 + 1 == 2) ft_putstr("\nTest for atoi passed");
-	else ft_putstr("\nTest for atoi Failed");
-	char str[]="zxcvb1234....";
+	char str[] = ".:123abc$>.";
 	int i = 0;
-	while (ft_isalnum(str[i])) i++;
-	if (i == 9) ft_putstr("\nTest for isalnum Passed");
-	else ft_putstr("\nTest for isalnum Failed");
-	letter = 'l';
-	if (ft_isalpha(letter)) ft_putstr("\nTest 1 for isalpha Passed");
-	else ft_putstr("\nTest 1 for isalpha Failed");
-	number1 = 1;
-	if (ft_isalpha(number1)) ft_putstr("\nTest 2 for isalpha Failed");
-	else ft_putstr("\nTest 2 for isalpha Passed");
-	letter = ' ';
-	if (ft_isascii(letter)) ft_putstr("\nTest 1 for isascii Passed");
-	else ft_putstr("\nTest 1 for isascii Failed");
-	if (ft_isascii('~')) ft_putstr("\nTest 2 for isascii Passed");
-	else (ft_putstr("\nTest 2 for isascii Failed"));
+
+	ft_putstr("ft_putchar test:\n");
+	ft_putchar('T');
+	ft_putstr("\n");
+
+	ft_putstr("\nft_putstr test:");
+	ft_putstr("\nPassed\n");
+
+	ft_putstr("\nft_atoi test:");
+	if (number1 + 1 == 2)
+	{
+		ft_putstr("\nPassed\n");
+	}
+	else
+	{
+		ft_putstr("\n Failed\n");
+	}
+
+	ft_putstr("\nft_isdigit test:\n");
+
+	number1 = '0';
+	if (ft_isdigit(number1)) ft_putstr("Test 1 Passed");
+	else ft_putstr("\nTest 1 Failed");
+	number1 = '9';
+	if (ft_isdigit(number1)) ft_putstr("\nTest 2 Passed");
+	else ft_putstr("\nTest 2 Failed");
+	if (ft_isdigit('l')) ft_putstr("\nTest 3 Failed");
+	else ft_putstr("\nTest 3 Passed\n");
+
+	ft_putstr("\nft_isalpha test:\n");
+	if (ft_isalpha(letter) == 1)
+	{
+		ft_putstr("Passed\n");
+	}
+	else
+	{
+		ft_putstr("Failed\n");
+	}
+
+	ft_putstr("\nft_isalnum test:\n");
+	i = 0;
+	while (str[i])
+	{
+		if (ft_isalnum(str[i]) == 1)
+		{
+			ft_putnbr(i);
+			ft_putstr("Alpha Numeric test Passed\n");
+			i++;
+		}
+		else if (ft_isalnum(str[i]) != 1)
+		{
+			ft_putnbr(i);
+			ft_putstr("Non Alphanumeric Test Passed\n");
+			i++;
+		}
+	}
+
+	ft_putstr("\nft_isascii test:\n");
+	if (ft_isascii(letter) == 1)
+	{
+		ft_putstr("Test 1 Passed\n");
+	}
+	else
+	{
+		ft_putstr("Test 1 Failed\n");
+	}
+	if (ft_isascii('~') == 1)
+	{
+		ft_putstr("Test 2 Passed\n");
+	}
+	else
+	{
+		ft_putstr("\nTest 2 Failed");
+	}
 	char lolnewchar[]= "¢";
-	if (ft_isascii(lolnewchar[0])) ft_putstr("\nTest 3 for isascii Failed");
-	else ft_putstr("\nTest 3 for isascii Passed");
-	int numberlol = '0';
-	if (ft_isdigit(numberlol)) ft_putstr("\nTest 1 for isdigit Passed");
-	else ft_putstr("\nTest 1 for isdigit Failed");
-	numberlol = '9';
-	if (ft_isdigit(numberlol)) ft_putstr("\nTest 2 for isdigit Passed");
-	else ft_putstr("\nTest 2 for isdigit Failed");
-	if (ft_isdigit('l')) ft_putstr("\nTest 3 for isdigit Failed");
-	else ft_putstr("\nTest 3 for isdigit Passed");
-	if (ft_isprint('p')) ft_putstr("\nTest 1 for isprint Passed");
-	else ft_putstr("\nTest 1 for isprint Failed");
-	if (ft_isprint('\n')) ft_putstr("\nTest 2 for isprint Failed");
-	else ft_putstr("\nTest 2 for isprint Passed");
+	if (ft_isascii(lolnewchar[0])) ft_putstr("Test 3 Failed");
+	else ft_putstr("Test 3 Passed\n");
+
+	ft_putstr("\nft_isprint Test:\n");
+	if (ft_isprint('p')) ft_putstr("Test 1 Passed\n");
+	else ft_putstr("Test 1 Failed\n");
+	if (ft_isprint('\n')) ft_putstr("Test 2 Failed\n");
+	else ft_putstr("Test 2 Passed\n");
+
+	ft_putstr("\nft_memset Test:\n");
 	char strmem[] = "almost every programmer should know memset!";
-	char strmemt[] = "almost every programmer should know memset!";
-	ft_memset(strmemt, '-', 6);
 	memset(strmem, '-',6);
-	if (strcmp(strmem, strmemt) == 0) ft_putstr("\nTest for memset Passed");
-	else ft_putstr("\nTest for memset Failed");
-    char cmptest[] = "Hello World";
+	if (ft_strcmp(strmem, "------ every programmer should know memset!") == 0) ft_putstr("Test Passed\n");
+	else ft_putstr("Test Failed\n");
+
+	ft_putstr("\nft_strcmp Test:\n");
+	char cmptest[] = "Hello World";
 	char cmtest1[] = "Hello World";
-	if (ft_strcmp(cmptest, cmtest1) == 0) ft_putstr("\nTest 1 for strcmp Passed");
-	else ft_putstr("\nTest 1 for strcmp Failed");
-	if (ft_strcmp("lol", "Faie") == +1) ft_putstr("\nTest 2 for strcmp Passed");
-	else ft_putstr("\nTest 2 for strcmp Failed");
-	char strchrstr[] = "Looking for the 's' character in \"This is a sample string\"";
-	char *pch;
-	pch = ft_strchr(strchrstr, 's');
-    if (pch == &strchrstr[17])
-    {
-        ft_putstr("\nTest 1 for ft_strchr Passed");
-    }
-    if (ft_strchr(strchrstr, 'z') == NULL) ft_putstr("\nTest 2 for ft_strchr Passed");
+	if (ft_strcmp(cmptest, cmtest1) == 0) ft_putstr("Test 1 Passed\n");
+	else ft_putstr("Test 1 Failed\n");
+	if (ft_strcmp("lol", "Faie") == +1) ft_putstr("Test 2 Passed\n");
+	else ft_putstr("Test 2 Failed\n");
+
+	ft_putstr("\nft_strchr Test:\n");
+	char strnewlol[] = "This is a sample string";
+	char * pch;
+	printf ("Looking for the 's' character in \"%s\"...\n",strnewlol);
+	pch=ft_strchr(strnewlol,'s');
+	while (pch!=NULL)
+	{
+		if (pch-strnewlol+1 == 4)
+		{
+			puts("\nTest Passed\n");
+			break;
+		}
+	}
+
+	ft_putstr("\nft_strcpy Test:\n");
 	char cmptestnewlol[] = "Hello";
 	char *cpytest = (char *)malloc(sizeof(char *)*6);
 	ft_strcpy(cpytest, cmptestnewlol);
-	if (strcmp(cmptestnewlol, cpytest) == 0) ft_putstr("\nTest for strcpy Passed");
-	else ft_putstr("\nTest for strcpy Failed");
+	if (strcmp(cmptestnewlol, cpytest) == 0) ft_putstr("Test Passed\n");
+	else ft_putstr("Test Failed\n");
+
+	ft_putstr("\nft_strdup Test:\n");
 	char s1[] = "Hello";
 	char *new;
-	new	= ft_strdup(s1);
-	if (strcmp(new, s1) == 0) ft_putstr("\nTest for strdup Passed");
-	else ft_putstr("\nTest for strdup Failed");
+	new = ft_strdup(s1);
+	if (strcmp(new, s1) == 0) ft_putstr("Test Passed\n");
+	else ft_putstr("Test Failed\n");
+
+	ft_putstr("\nft_strcat Test:\n");
 	char str2[31];
-	ft_strcpy(str2, "these ");
-	ft_strcat(str2, "strings ");
-	ft_strcat(str2, "are ");
-	ft_strcat(str2, "concatenated.");
-	if (ft_strcmp(str2, "these strings are concatenated.") == 0) ft_putstr("\nTest for strcat Passed");
+	ft_strcpy(str, "these ");
+	ft_strcat(str, "strings ");
+	ft_strcat(str, "are ");
+	ft_strcat(str, "concatenated.");
+	if (ft_strcmp(str, "these strings are concatenated.") == 0) ft_putstr("Test Passed\n");
 	char lentest[] = "hello";
-	if (ft_strlen(lentest) == 5) ft_putstr("\nTest for strlen Passsed");
-	else ft_putstr("\nTest for strlen Failed");
+
+	ft_putstr("\nft_strlen Test:\n");
+	if (ft_strlen(lentest) == 5) ft_putstr("Test Passed\n");
+	else ft_putstr("Test Failed\n");
+
+	ft_putstr("\nft_tolower Test:\n");
 	char tolowertest = 'A';
 	tolowertest = ft_tolower(tolowertest);
-	if (tolowertest == 'a') ft_putstr("\nTest for tolower Passed");
-	else ft_putstr("\nTest for tolower Failed");
+	if (tolowertest == 'a') ft_putstr("Test Passed\n");
+	else ft_putstr("Test Failed\n");
+
+	ft_putstr("\nft_toupper Test:\n");
 	tolowertest = 'a';
 	tolowertest = ft_toupper(tolowertest);
-	if (tolowertest == 'A') ft_putstr("\nTest for toupper Passed");
-	else ft_putstr("\nTest for toupper Failed");
-	char strncpytest[] = "testl";
+	if (tolowertest == 'A') ft_putstr("Test Passed\n");
+	else ft_putstr("Test Failed\n");
+
+	ft_putstr("\nft_strncpy Test:\n");
+	char strncpytest[] = "testlolnew";
 	char ncattest[10];
-	ft_strncpy(ncattest, strncpytest, 10);
+	ft_strncpy(ncattest, strncpytest, 5);
 	char testl[] = "testl";
-	if (ft_strcmp(ncattest, testl) == 0) ft_putstr("\nTest for strncpy Passed");
-	else ft_putstr("\nTest for strncpy Failed");
-	char *strlcatsrc = "motto";
-    char strlcatdst[10] = "hello";
-    //if (strlcat(strlcatdst, strlcatsrc, sizeof(strlcatdst)) == 10) printf("%s", "\nstrlcat test 1 passed");
-    //else printf("%s", "\nstrlcat test 1 failed\n");
-    char strlcatdst2[7] = "hello";
-    char *strlcatsrc2 = "motto";
-    //if (ft_strlcat(strlcatdst2, strlcatsrc2, sizeof(strlcatdst2)) == 7) printf("%s", "\nstrlcat test 2 passed");
-    //else printf("%s", "\nstrlcat test 2 failed");
-    char strncatest1[20];
+	if (ft_strcmp(ncattest, testl) == 0) ft_putstr("Test Passed\n");
+	else ft_putstr("Test Failed\n");
+
+	ft_putstr("\nft_strlcat Test:\n");
+	char strlcatt[] = "testlol";
+	char strlcatf[10];
+	ft_strlcat(strlcatf, "kjkjkjkjkjkl", sizeof(strlcatf));
+	if (ft_strcmp(strlcatf, "kjkjkjkjk") == 0) ft_putstr("Test Passed\n");
+	else ft_putstr("Test Failed\n");
+
+	ft_putstr("\nft_strncat Test:\n");
+	char strncatest1[20];
 	char strncatest2[20];
 	strcpy (strncatest1, "To be ");
 	strcpy (strncatest2, "or not to be");
-	//ft_strncat(strncatest1, strncatest2, 6);
-	//if (strcmp(strncatest1, "To be or not") == 0) ft_putstr("\nTest for strncat Passed");
-	//else ft_putstr("\nTest for strncat Failed");
+	ft_strncat(strncatest1, strncatest2, 6);
+	if (strcmp(strncatest1, "To be or not") == 0) ft_putstr("Test Passed\n");
+	else ft_putstr("Test Failed\n");
+
+	ft_putstr("\nft_strncmp Test:\n");
 	char strncmp[][5] = { "R2D2", "C3PO", "R2A6" };
 	int n = 0;
 	while (n <= 10)
 	{
 		if (ft_strncmp(&str[n], "R2xx", str[n]))
 		{
-			ft_putstr("\nTest for strncmp Passed");
+			ft_putstr("Test Passed\n");
 			break;
 		}
 		n++;
 	}
 	ft_putstr("\n");
+
+	ft_putstr("\nft_strjoin Test:\n");
+	char cat1[] = "snow";
+	char cat2[] = "ball";
+	ft_putstr(ft_strjoin(cat1, cat2));
+
+	ft_putstr("\nft_memcpy Test:\n");
+
+	char tmemcpy[] = "abcde";
+	ft_memcpy(tmemcpy, "12345", 3);
+	if (ft_strcmp(tmemcpy, "123de") == 0) ft_putstr("Test Passed\n");
+	else ft_putstr("Test Failed\n");
+
+	//ft_putstr("\nft_memchr Test:\n");
+
+	//char tmemchr[] = "www.test.com";
+	//char *ret = ft_memchr(tmemchr, '.', ft_strlen(tmemchr));
+	//if (ft_strcmp(ret, ".test.com") == 0) ft_putstr("Test Passed\n");
+	//else ft_putstr("Test Failed\n");
+
+	ft_putstr("\nft_memccpy Test:\n");
+
+	char tmemccpy[2][7]  =  { "abcde", "abcdef" };
+	void *re;
+	memccpy(tmemccpy[0], "12345", 33, 3);
+	if (ft_strcmp(tmemccpy[0], "123de") == 0) ft_putstr("Test 1 Passed\n");
+	else ft_putstr("Test 1 Failed\n");
+	re = ft_memccpy(tmemccpy[1], "12345", 51, 5);
+	if (ft_strcmp(tmemccpy[1], "123def") == 0) ft_putstr("Test 2 Passed\n");
+	else ft_putstr("Test 2 Failed\n");
+	if (ft_strcmp(re, "d")) ft_putstr("Test 3 Passed\n");
+	else ft_putstr("Test 3 Failed\n");
+
+	//ft_putstr("\nft_memcmp Test:\n");
+
+	//int greater, lessthan, equal;
+	//greater = ft_memcmp("abcd", "abc", 4);
+	//lessthan = ft_memcmp("abc", "abcd", 4);
+	//equal = ft_memcmp("abc", "abc", 3);
+	//if (greater > 0) ft_putstr("Test 1 Passed\n");
+	//else ft_putstr("Test 1 Failed\n");
+	//if (lessthan < 0) ft_putstr("Test 2 Passed\n");
+	//else ft_putstr("Test 2 Failed\n");
+	//if (equal == 0) ft_putstr("Test 3 Passed\n");
+	//else ft_putstr("Test 3 Failed\n");
+
+	//ft_putstr("\nft_memmove Test:\n");
+
+	//char tmemmove[] = "abcde";
+	//ft_memmove(tmemmove, "12345", 3);
+	//if (ft_strcmp(tmemmove, "123de") == 0) ft_putstr("Test Passed\n");
+	//else ft_putstr("Test Failed\n");
+
+	ft_putstr("\nft_strequ Test:\n");
+
+	char tstrequ[] = "hello";
+	if (ft_strequ(tstrequ, "hello") == 1) ft_putstr("Test Passed\n");
+	else ft_putstr("Test Failed\n");
+
+	ft_putstr("\nft_bzero Test:\n");
+	char strbzero[10] = "llllllllll";
+	char strbzerot[10] = "llllllllll";
+	ft_bzero(strbzero, ft_strlen(strbzero));
+	bzero(strbzerot, ft_strlen(strbzerot));
+	if (strcmp(strbzero, strbzerot) == 0) ft_putstr("Test Passed\n");
+	else ft_putstr("Test Failed\n");
+
+	puts("\nft_strstr\n");
+	char strstrstr[] ="This is a simple string";
+	char strstrstrstr[] = "This is a sample string";
+	char *strpch;
+	strpch = ft_strstr(strstrstr,"simple");
+	strncpy (strpch,"sample",6);
+	  if (strcmp(strstrstr, strstrstrstr) == 0) puts("Test Passed\n");
+	  else puts("Test Failed\n");
+
 	return (0);
 }
